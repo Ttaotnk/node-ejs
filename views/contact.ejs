@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="/images.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <%- include('compo/nav'); %>
-    <h1>contact</h1>
-    <hr>
+    <header>
+        <h1>Contact Us</h1>
+        <%- include('compo/nav'); %>
+    </header>
+
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <p>Email: contact@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My App</p>
+    </footer>
 </body>
 </html>
