@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/images.jpg" type="image/x-icon">
+    
+    
+</head>
+<body>
+    <%- include('compo/nav'); %>
+    <h1>Hello World</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+            <tr>
+                <td>             <%= product.id %></td>
+                <td class="tdn"> <%= product.name %></td>
+                <td class="tde"> <%= product.description %></td>
+                <td >
+                    <% if (product.image) { %> 
+                        <img src="/uploads/<%= product.image %>" width="100" />
+                    <% } else { %> 
+                        <p>No image</p>
+                    <% } %>
+                </td>
+                <td>
+                    <a href="/edit/<%= product.id %>">Edit</a>
+                    <a href="/delete/<%= product.id %>" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+
+    
+</body>
+</html>

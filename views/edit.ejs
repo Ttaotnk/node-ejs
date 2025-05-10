@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/images.jpg" type="image/x-icon">
+</head>
+<body>
+    <ul class="ul-menu">
+        <li><a href="/">Back</a></li>
+     
+    </ul>
+   
+    <h1>Edit product</h1>
+
+    <form action="/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= product.name %>" placeholder="enter product name">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" required placeholder="enter product description">
+                <%= product.description %>
+            </textarea>
+        </div>
+        <div>
+            <label for="image">Image:</label>
+            <% if(product.image){%>
+                <img src="/uploads/<%= product.image %>" width="100"/>
+                <input type="hidden" name="oldImage" value="<%= product.image %>">
+            <% }  %>
+            <input type="file" name="image" >
+        </div>
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>
