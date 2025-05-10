@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกิดข้อผิดพลาด</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>เกิดข้อผิดพลาด</h1>
+        <%- include('compo/nav'); %>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <h2><%= error %></h2>
+            <a href="/" class="btn">กลับสู่หน้าหลัก</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ระบบจัดการสินค้า</p>
+    </footer>
+</body>
+</html>
